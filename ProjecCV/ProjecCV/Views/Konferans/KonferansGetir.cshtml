@@ -1,0 +1,19 @@
+﻿@model ProjecCV.Models.Entity.TBLAWARDS
+@{
+    ViewBag.Title = "KonferansGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Konferans", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ID)
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.AWARD)
+        @Html.TextBoxFor(m => m.AWARD, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Konferans Bilgisini Güncelle</button>
+    </div>
+}
+

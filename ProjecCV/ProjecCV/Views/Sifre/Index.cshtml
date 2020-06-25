@@ -1,0 +1,30 @@
+﻿@model ProjecCV.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>KULLANICI ADI</th>
+                <th>ŞİFRE</th>
+                <th>ROL</th>
+                <th>Kullanıcı Adı veya Şifre Değiştir</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.Deger7)
+            {
+                <tr>
+                    <th>@x.ID</th>
+                    <td>@x.USERNAME</td>
+                    <td>@x.PASSWORD</td>
+                    <td>@x.ROLE</td>
+                    <td><a href="/Sifre/VeriGetir/@x.ID" class="btn btn-warning">Kullanıcı Adı veya Şifre Değiştir</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

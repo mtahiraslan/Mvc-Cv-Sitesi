@@ -1,0 +1,39 @@
+﻿@using ProjecCV.Models.Entity
+@model List<TBLAWARDS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+    
+    @using (Html.BeginForm("Index", "Konferans", FormMethod.Get))
+    {
+        <p>
+            <b>Aranacak Değer:</b> @Html.TextBox("p")
+            <input type="submit" value="Ara"/>
+        </p>
+    }
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>KONFERANS</th>
+                <th>SİL</th>
+                <th>GÜNCELLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+            <tr>
+                <th>@x.ID</th>
+                <td>@x.AWARD</td>
+                <td>@Html.ActionLink("Sil", "Sil", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor Musunuz?')" })</td>
+                <td><a href="/Konferans/KonferansGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Konferans/YeniKonferans/" class=" btn btn-info">Yeni Konferans Ekle</a>
+

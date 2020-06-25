@@ -1,0 +1,24 @@
+﻿@model ProjecCV.Models.Entity.TBLUSERS
+@{
+    ViewBag.Title = "VeriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Sifre", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ID)
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.USERNAME)
+        @Html.TextBoxFor(m => m.USERNAME, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PASSWORD)
+        @Html.TextBoxFor(m => m.PASSWORD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ROLE)
+        @Html.TextBoxFor(m => m.ROLE, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Değiştir</button>
+    </div>
+}
