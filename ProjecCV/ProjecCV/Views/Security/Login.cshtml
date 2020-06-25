@@ -1,0 +1,85 @@
+﻿@model ProjecCV.Models.Entity.TBLUSERS
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Özgeçmiş Web Sitesi</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Clear login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Stylesheets -->
+    <link href="~/web/css/font-awesome.css" rel="stylesheet">
+    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+    <!--// Stylesheets -->
+    <!--fonts-->
+    <!-- title -->
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext" rel="stylesheet">
+    <!--//fonts-->
+</head>
+
+<body>
+    <h1> Hoş Geldiniz </h1>
+    <div class="w3ls-login box box--big">
+        <!-- form starts here -->
+        <form action="#" method="post">
+            @using (Html.BeginForm("Login","Security",FormMethod.Post))
+            {
+                <div class="agile-field-txt">
+                    @Html.LabelFor(m => m.USERNAME)
+                    @Html.TextBoxFor(m => m.USERNAME, new { @class = "form-control", placeholder = "Kullanıcı Adı" })
+                </div>
+                <div class="agile-field-txt">
+                    @Html.LabelFor(m => m.PASSWORD)
+                    @Html.PasswordFor(m => m.PASSWORD, new { @class = "form-control", placeholder = "Şifre" })    
+                </div>
+                <label style="color:#ffffff">@ViewBag.Mesaj</label>
+                
+                <!-- script for show password -->
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myInput");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+                </script>
+                <!-- //script ends here -->
+                <div class="w3ls-bot">
+                    <div class="form-end">
+                        <input type="submit" value="Giriş Yap">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            }
+            </form>
+    </div>
+    <!-- //form ends here -->
+    <!--copyright-->
+    <div class="copy-wthree">
+        <p>
+            © 2020 | Design by Mehmet Tahir ASLAN
+        </p>
+    </div>
+    <!--//copyright-->
+</body>
+
+</html>

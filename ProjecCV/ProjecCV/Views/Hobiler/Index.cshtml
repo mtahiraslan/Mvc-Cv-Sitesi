@@ -1,0 +1,30 @@
+﻿@model ProjecCV.Models.Sinif.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>HOBİ</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Deger5)
+        {
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.INTEREST</td>
+            <td>@Html.ActionLink("Sil", "Sil", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor Musunuz?')" })</td>
+            <td><a href="/Hobiler/HobiGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Hobiler/YeniHobi/" class="btn btn-info">Yeni Hobi Ekle</a>
+
